@@ -130,7 +130,7 @@ void Surface_DVE_Vel_Induction(const GENERAL info,const double P[3],\
 
 
 	//loop over surface DVEs that induce velocities
-	#pragma omp parallel for private(w_ind,j) shared(info,P,surfacePtr) reduction(+:w_surface0,w_surface1,w_surface2) num_threads(2)
+	#pragma omp parallel for private(w_ind,j) shared(info,P,surfacePtr) reduction(+:w_surface0,w_surface1,w_surface2) num_threads(3)
 	for(j=0;j<info.noelement;j++)
 	{
 			//computing induced velocity of j-th surface DVE on point P.
@@ -221,7 +221,7 @@ void Wake_DVE_Vel_Induction(const GENERAL info,const double P[3],\
 	w_wake1 = 0;
 	w_wake2 = 0;
 
-	#pragma omp parallel for default(none) private(w_ind,time,span) shared(info,P,wakePtr) reduction(+:w_wake0,w_wake1,w_wake2)  num_threads(2)
+	#pragma omp parallel for default(none) private(w_ind,time,span) shared(info,P,wakePtr) reduction(+:w_wake0,w_wake1,w_wake2)  num_threads(3)
 	for(span=0;span<info.nospanelement;span++){	
 
 	for(time=1;time<timestep;time++){
