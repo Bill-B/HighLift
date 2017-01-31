@@ -1,0 +1,4 @@
+*.bak
+D_matrix_endKindcond.txt
+iteration.txt
+*.obj

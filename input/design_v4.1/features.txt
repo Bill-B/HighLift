@@ -1,0 +1,27 @@
+New features in this version
+
+
+
+V2	
+-added multi-wing support
+
+
+
+V3	
+-new panel input method (LE coordinate based)
+
+	-fixed span and planform area calculations
+
+
+
+
+V3.1	-camber support
+	-ModifyTools in progress
+	-blending of panels with camber in progress
+	-added STL2matlab support for opening CAD drawings
+
+v4	-new panel input method (CAD input)
+	-multi panel input method
+	-ModifyTools has multiple input options (mirror, multiple transformations)
+v4.1	-removed aero data, time data and run conditions from input
+	-started with thickness

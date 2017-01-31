@@ -1,0 +1,6 @@
+-----------------STL Offset---------------------
+Timestep to Plot:		timestep = 0
+Width of each time step (sec):	deltime	= 0
+Free Stream Velocity [ft/sec]:	Uinf	= 0
+Angle of attack [deg]:		alpha	= 0
+-------------------------------------------------
