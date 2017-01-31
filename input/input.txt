@@ -1,4 +1,4 @@
-Relaxed wake (yes 1, no 0):		relax= 2
+Relaxed wake (yes 1, no 0, prescribe 2):		relax= 2
 steady (1) or unsteady (0): 		aerodynamics: = 1
 Symmetrical geometry (yes 1,no 0):	sym= 1
 Analysis type(thin 0, thick 1, panel quad 2, panel tri 3) analysistype = 3
