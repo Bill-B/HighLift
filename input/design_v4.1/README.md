@@ -1,0 +1,1 @@
+DesignTools.m will read from design.txt and generate the necessary input files. Note that design-CADexample.txt and design-FreeWakeexample.txt are only example inputs, and their contents only serve to show the user the correct format for design.txt
