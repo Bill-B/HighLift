@@ -9,7 +9,7 @@ addpath ./Source
 %% LOAD DATA
 %enter a timestep
 %timestep = input('What timestep?');
-timestep =36;
+timestep =10;
  
 
 
@@ -102,7 +102,7 @@ cd ./Source
 
 %% CHECK STALL
 %[cpdel,  cpdel_limit] = pdr( cp,xole,Re,MAC,Mach )
-[cpdel(:),  cpdel_limit,cppeak,cppeak_limit]=pdr(cp1sm,XOLE,YOLE,ZOLE,4300000,39.6,0.2);
+[cpdel(:),  cpdel_limit,cppeak,cppeak_limit]=pdr(cp1sm,XOLE,YOLE,ZOLE,400000,18,0.2);
 % [cpdel(:),  cpdel_limit,cppeak]=pdr(cp1,XOLE,YOLE,ZOLE,2300000,1,0.2);
 
 if any(cpdel> cpdel_limit)==1
@@ -202,13 +202,13 @@ end
 clear a b c;
 
 %% plot sections 
-sectionstall = zeros(size(sectionstall));
-% sectionstall(4) = 1;
-sectionstall(6) = 1;
-% sectionstall(14) = 1;
-sectionstall(16) = 1;
-% sectionstall(24) = 1;
-sectionstall(26) = 1;
+% sectionstall = zeros(size(sectionstall));
+% % sectionstall(4) = 1;
+% sectionstall(6) = 1;
+% % sectionstall(14) = 1;
+% sectionstall(16) = 1;
+% % sectionstall(24) = 1;
+% sectionstall(26) = 1;
 a=min(XOLE,[],1);
 b=min(YOLE,[],1);
 c=min(ZOLE,[],1);
@@ -305,7 +305,7 @@ end
 
 % plot([1:size(cp1,2)],linspace(cpdel_limit,cpdel_limit,size(cp1,2)),'-r');
 % plot([1:size(cp1,2)],cpdel,'-b');
-legend('Cp diff limit, PDR','Local Cp diff','Location','Northwest');
+legend('Cp limit, 0.7 vacuum','Local Cp diff','Location','Northwest');
 
 % axis tight
 clear rf count loc open multi

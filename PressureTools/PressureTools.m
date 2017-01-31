@@ -145,14 +145,14 @@ box on
 % [ x_real, Cp_real ] = XFOIL_NACA_Inviscid_Cpx_alfa( 2412, alpha );
 % h = plot(x_real,Cp_real,'-r');
 % 
-cd ./../TRAP_press
-eta_want = YOLE(1,2) / 85.1;
-Manip_TRAP(alpha,eta_want*100);
+% cd ./../TRAP_press
+% eta_want = YOLE(1,2) / 85.1;
+% Manip_TRAP(alpha,eta_want*100);
 % h=circlepress();
 
 % legend('Cp = 1-Cn','Cp = 1- (A/4xsi / Vinf)^2','Cp = 1-(V / Vinf)^2','XFOIL Solution');
 %  legend('Cp = 1-Cn','2','3','Data');
-cd ./../
+% cd ./../
 
 %% STALL CONDITION
 
