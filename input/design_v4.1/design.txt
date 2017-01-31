@@ -1,72 +1,44 @@
 -- Model-Design --
+Design method (FreeWake or CAD):    method = FreeWake    
 
-Design method (FreeWake or CAD):    method = CAD
-
-------- Wing Name = TRAP_SLAT_CFG8 ---------------
-No. of Panels:                      panels = 1
+------- Wing Name = GustAV_main ---------------
+No. of Panels:                      panels = 2
 Root Boundary Condition:	    BC1 = 010
 Tip Boundary Condition		    BC2 = 100
-Thickness (No 0, Yes 1, Panel 2):	    thick = 0
- Boundary Condition (Neumann 0, Dirichlet 1): bc = 0
-Chordwise Distribution of m:        cdist = linear (linear,sine or halfsine)
------------ Panel 1 Design ---------------------
-Allign with Prev Panel?:            allign = 1  (yes 1,no 0)
-Root Blend Method:		    blend = 0 (0: none, 1: average, 2: dihedral based, 3: Panel Intersection, 4: Left Master, 5: Right Master)
-Root Leading Edge (X Y Z):          rLE = 0.279690 3.838598 -4.978265
-Root Trailing Edge (X Y Z):	    rTE = 2.669800 2.178700 -0.044290
-Tip Leading Edge (X Y Z):           tLE = 55.331000 86.220000 -3.864600
-Tip Trailing Edge (X Y Z): 	    tTE = 58.348000 84.161400 -0.217700
-No. of spanwise elements n:         n = 12
-No. of chordwise elements m:        m = 12
-Root Camber:			    rcamb = TRAP_SLAT_MOD3_CAMB
-Root Airfoil:			    rairfoil = TRAP_SLAT
-Tip Camber:			    tcamb = TRAP_SLAT_MOD3_CAMB
-Tip Airfoil:			    tairfoil = TRAP_SLAT
-------------------------------------------------
-------------------------------------------------
-
-------- Wing Name = TRAP_MAIN_CFG8 ---------------
-No. of Panels:                      panels = 1
-Root Boundary Condition:	    BC1 = 010
-Tip Boundary Condition		    BC2 = 100
-Thickness (No 0, Yes 1, Panel 2):	    thick = 0
+Thickness (No 0, Yes 1, Panel Quad 2, Panel Tri 3):	    thick = 3
 Boundary Condition (Neumann 0, Dirichlet 1): bc = 0
-Chordwise Distribution of m:        cdist = linear (linear,sine or halfsine)
+Chordwise Distribution of m:        cdist = halfsine (linear,sine or halfsine)
 ----------- Panel 1 Design ---------------------
 Allign with Prev Panel?:            allign = 1  (yes 1,no 0)
 Root Blend Method:		    blend = 0 (0: none, 1: average, 2: dihedral based, 3: Panel Intersection, 4: Left Master, 5: Right Master)
-Root Leading Edge (X Y Z):          rLE = 2.125000 0.000000 -1.302000
-Root Trailing Edge (X Y Z):	    rTE = 42.780000 0.000000 0.978600
-Tip Leading Edge (X Y Z):           tLE = 59.240000 85.050000 -0.427500
-Tip Trailing Edge (X Y Z): 	    tTE = 74.020000 85.050000 0.386400 
-No. of spanwise elements n:         n = 12
-No. of chordwise elements m:        m = 12
-Root Camber:			    rcamb = TRAP_MAIN_CAMB1
-Root Airfoil:			    rairfoil = TRAP_MAIN
-Tip Camber:			    tcamb = TRAP_MAIN_CAMB1
-Tip Airfoil:			    tairfoil = TRAP_MAIN
+Root Leading Edge (X Y Z):          rLE = 0 0 0
+Root Chord Length:                  rchord = 0.457
+Root Angle (rad):                   repsilon = 0.0349066 
+Tip Leading Edge (X Y Z):           tLE = 0.000	0.6858	0.000
+Tip Chord Length:                   tchord = 0.457
+Tip Angle (rad):                    tepsilon = 0.0349066
+No. of spanwise elements n:         n = 4
+No. of chordwise elements m:        m = 24
+Root Camber:			    rcamb = flatplate
+Root Airfoil:			    rairfoil = psu94097
+Tip Camber:			    tcamb = flatplate
+Tip Airfoil:			    tairfoil = psu94097
+------------------------------------------------
+----------- Panel 2 Design ---------------------
+Allign with Prev Panel?:            allign = 1  (yes 1,no 0)
+Root Blend Method:		    blend = 1 (0: none, 1: average, 2: dihedral based, 3: Panel Intersection, 4: Left Master, 5: Right Master)
+Root Leading Edge (X Y Z):          rLE = 0.000	0.6858	0.000
+Root Chord Length:                  rchord = 0.457
+Root Angle (rad):                   repsilon = 0.0349066
+Tip Leading Edge (X Y Z):           tLE = 0.08	1.3	0.032
+Tip Chord Length:                   tchord = 0.173
+Tip Angle (rad):                    tepsilon = 0.0349066
+No. of spanwise elements n:         n = 5
+No. of chordwise elements m:        m = 24
+Root Camber:			    rcamb = flatplate
+Root Airfoil:			    rairfoil = psu94097
+Tip Camber:			    tcamb = flatplate
+Tip Airfoil:			    tairfoil = psu94097
 ------------------------------------------------
 ------------------------------------------------
 
-------- Wing Name = TRAP_FLAP_CFG8 ---------------
-No. of Panels:                      panels = 1
-Root Boundary Condition:	    BC1 = 010
-Tip Boundary Condition		    BC2 = 100
-Thickness (No 0, Yes 1, Panel 2):	    thick = 0
-Boundary Condition (Neumann 0, Dirichlet 1): bc = 0
-Chordwise Distribution of m:        cdist = linear (linear,sine or halfsine)
------------ Panel 1 Design ---------------------
-Allign with Prev Panel?:            allign = 1  (yes 1,no 0)
-Root Blend Method:		    blend = 0 (0: none, 1: average, 2: dihedral based, 3: Panel Intersection, 4: Left Master, 5: Right Master)
-Root Leading Edge (X Y Z):          rLE = 42.341223 -0.504364 -0.288540
-Root Trailing Edge (X Y Z):	    rTE =  56.954895 0.535641 -6.819272
-Tip Leading Edge (X Y Z):           tLE =  74.125625 85.591445 -0.149786
-Tip Trailing Edge (X Y Z): 	    tTE = 79.892688 86.001890 -2.727177
-No. of spanwise elements n:        n = 12
-No. of chordwise elements m:        m = 12
-Root Camber:			    rcamb = TRAP_FS_FLAP_ROOT_camb
-Root Airfoil:			    rairfoil = TRAP_FLAP
-Tip Camber:			    tcamb = TRAP_FS_FLAP_ROOT_camb
-Tip Airfoil:			    tairfoil = TRAP_FLAP
-------------------------------------------------
-------------------------------------------------
