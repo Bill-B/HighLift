@@ -2,3 +2,14 @@
 D_matrix_endKindcond.txt
 iteration.txt
 *.obj
+*.fig
+*.rar
+*.pdf
+
+output/*.txt
+output/*.gif
+
+input/*.txt
+input/design_v4.1/*.txt
+input/design_v4.1/wings/**
+input/design_v4.1/CADmodels/**
