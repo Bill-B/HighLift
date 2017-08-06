@@ -17,7 +17,7 @@ Root Angle (rad):                   repsilon = 0.0349066
 Tip Leading Edge (X Y Z):           tLE = 0.08	0.6142	0.032
 Tip Chord Length:                   tchord = 0.173
 Tip Angle (rad):                    tepsilon = 0.0349066
-No. of spanwise elements n:         n = 9
+No. of spanwise elements n:         n = 21
 No. of chordwise elements m:        m = 24
 Root Camber:			    rcamb = flatplate
 Root Airfoil:			    rairfoil = psu94097
@@ -28,59 +28,91 @@ Tip Airfoil:			    tairfoil = psu94097
 
 
 ------- Wing Name = tunnel ---------------
-No. of Panels:                      panels = 3
+No. of Panels:                      panels = 5
 Root Boundary Condition:	    BC1 = 010
 Tip Boundary Condition		    BC2 = 010
 Thickness (No 0, Yes 1):	    thick = 3
 Boundary Condition (Neumann 0, Dirichlet 1): bc = 0
-Chordwise Distribution of m:        cdist = halfsine (linear or sine)
+Chordwise Distribution of m:        cdist = linear (linear or sine)
 ----------- Panel 1 Design ---------------------
 Allign with Prev Panel?:            allign = 1  (yes 1,no 0)
 Root Blend Method:		    blend = 0 (0: none, 1: average, 2: dihedral based, 3: Panel Intersection, 4: Left Master, 5: Right Master)
 Root Leading Edge (X Y Z):          rLE = -1 0 -0.457
-Root Chord Length:                  rchord = 5
+Root Chord Length:                  rchord = 4
 Root Angle (rad):                   repsilon = 0
-Tip Leading Edge (X Y Z):           tLE = -1 0.914 -0.457
-Tip Chord Length:                   tchord = 5
+Tip Leading Edge (X Y Z):           tLE = -1 0.8 -0.457
+Tip Chord Length:                   tchord = 4
 Tip Angle (rad):                    tepsilon = 0
-No. of spanwise elements n:         n = 3
+No. of spanwise elements n:         n = 7
 No. of chordwise elements m:        m = 24
 Root Camber:			    rcamb = flatplate
-Root Airfoil:			    rairfoil = flatplate
+Root Airfoil:			    rairfoil = naca0002
 Tip Camber:			    tcamb = flatplate
-Tip Airfoil:			    tairfoil = flatplate
+Tip Airfoil:			    tairfoil = naca0002
 ------------------------------------------------
 ----------- Panel 2 Design ---------------------
 Allign with Prev Panel?:            allign = 1  (yes 1,no 0)
 Root Blend Method:		    blend = 1 (0: none, 1: average, 2: dihedral based, 3: Panel Intersection, 4: Left Master, 5: Right Master)
-Root Leading Edge (X Y Z):          rLE = -1 0.914 -0.457
-Root Chord Length:                  rchord = 5
+Root Leading Edge (X Y Z):          rLE = -1 0.8 -0.457
+Root Chord Length:                  rchord = 4
 Root Angle (rad):                   repsilon = 0
-Tip Leading Edge (X Y Z):           tLE = -1 0.914 0.457
-Tip Chord Length:                   tchord = 5
+Tip Leading Edge (X Y Z):           tLE = -1 0.914 -0.343
+Tip Chord Length:                   tchord = 4
 Tip Angle (rad):                    tepsilon = 0
-No. of spanwise elements n:         n = 3
+No. of spanwise elements n:         n = 1
 No. of chordwise elements m:        m = 24
 Root Camber:			    rcamb = flatplate
-Root Airfoil:			    rairfoil = flatplate
+Root Airfoil:			    rairfoil = naca0002
 Tip Camber:			    tcamb = flatplate
-Tip Airfoil:			    tairfoil = flatplate
+Tip Airfoil:			    tairfoil = naca0002
 ------------------------------------------------
 ----------- Panel 3 Design ---------------------
 Allign with Prev Panel?:            allign = 1  (yes 1,no 0)
 Root Blend Method:		    blend = 1 (0: none, 1: average, 2: dihedral based, 3: Panel Intersection, 4: Left Master, 5: Right Master)
-Root Leading Edge (X Y Z):          rLE = -1 0.914 0.457
-Root Chord Length:                  rchord = 5
+Root Leading Edge (X Y Z):          rLE = -1 0.914 -0.343
+Root Chord Length:                  rchord = 4
 Root Angle (rad):                   repsilon = 0
-Tip Leading Edge (X Y Z):           tLE = -1 0 0.457
-Tip Chord Length:                   tchord = 5
+Tip Leading Edge (X Y Z):           tLE = -1 0.914 0.343
+Tip Chord Length:                   tchord = 4
 Tip Angle (rad):                    tepsilon = 0
-No. of spanwise elements n:         n = 3
+No. of spanwise elements n:         n = 7
 No. of chordwise elements m:        m = 24
 Root Camber:			    rcamb = flatplate
-Root Airfoil:			    rairfoil = flatplate
+Root Airfoil:			    rairfoil = naca0002
 Tip Camber:			    tcamb = flatplate
-Tip Airfoil:			    tairfoil = flatplate
+Tip Airfoil:			    tairfoil = naca0002
+------------------------------------------------
+----------- Panel 4 Design ---------------------
+Allign with Prev Panel?:            allign = 1  (yes 1,no 0)
+Root Blend Method:		    blend = 1 (0: none, 1: average, 2: dihedral based, 3: Panel Intersection, 4: Left Master, 5: Right Master)
+Root Leading Edge (X Y Z):          rLE = -1 0.914 0.343
+Root Chord Length:                  rchord = 4
+Root Angle (rad):                   repsilon = 0
+Tip Leading Edge (X Y Z):           tLE = -1 0.8 0.457
+Tip Chord Length:                   tchord = 4
+Tip Angle (rad):                    tepsilon = 0
+No. of spanwise elements n:         n = 7
+No. of chordwise elements m:        m = 24
+Root Camber:			    rcamb = flatplate
+Root Airfoil:			    rairfoil = naca0002
+Tip Camber:			    tcamb = flatplate
+Tip Airfoil:			    tairfoil = naca0002
+------------------------------------------------
+----------- Panel 5 Design ---------------------
+Allign with Prev Panel?:            allign = 1  (yes 1,no 0)
+Root Blend Method:		    blend = 1 (0: none, 1: average, 2: dihedral based, 3: Panel Intersection, 4: Left Master, 5: Right Master)
+Root Leading Edge (X Y Z):          rLE = -1 0.8 0.457
+Root Chord Length:                  rchord = 4
+Root Angle (rad):                   repsilon = 0
+Tip Leading Edge (X Y Z):           tLE = -1 0 0.457
+Tip Chord Length:                   tchord = 4
+Tip Angle (rad):                    tepsilon = 0
+No. of spanwise elements n:         n = 7
+No. of chordwise elements m:        m = 24
+Root Camber:			    rcamb = flatplate
+Root Airfoil:			    rairfoil = naca0002
+Tip Camber:			    tcamb = flatplate
+Tip Airfoil:			    tairfoil = naca0002
 ------------------------------------------------
 ------------------------------------------------
 
