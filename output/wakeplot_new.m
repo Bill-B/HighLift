@@ -7,7 +7,7 @@
 %all files must be located in the output folder
 %axis, view, size, position and framerate are set at the end of the file
 %%========================================================================%
-function [] = wakeplot_new(step,sym)
+function [p] = wakeplot_new(step,sym)
 if nargin == 0
     
     
@@ -142,8 +142,8 @@ delete('./temp.txt');
 delete('./DVEs.dat');
 
 %colors
-% cmap = jet(numwings);
-cmap = parula(100);
+cmap = jet(numwings);
+% cmap = parula(100);
 cmap = flipud(cmap);
 colormap(cmap);
 %plot wing
@@ -152,9 +152,10 @@ hold on
 
 %plot wing
 % x = [1:(numelements*numwings)];
-patch(wing(:,1:4)',wing(:,5:8)',wing(:,9:12)',[0.4 0.4 0.4],'FaceAlpha',0.8,'EdgeColor','k');
+p=patch(wing(:,1:4)',wing(:,5:8)',wing(:,9:12)',[0.4 0.4 0.4],'FaceAlpha',0.8,'EdgeColor','k','EdgeAlpha',0.6);
 if strcmp(sym,'y')==1
-    patch(wing(:,1:4)',-wing(:,5:8)',wing(:,9:12)',[0.4 0.4 0.4],'FaceAlpha',0.8,'EdgeColor','k');
+    warning('symm doesnt handle axis correctly')
+    patch(wing(:,1:4)',-wing(:,5:8)',wing(:,9:12)',[0.4 0.4 0.4],'FaceAlpha',0.8,'EdgeColor','k','EdgeAlpha',0.6);
 end
 hold off
 
@@ -166,11 +167,12 @@ count=1;
 % surf(reshape(data(:,2),n,timestep),reshape(data(:,6),n,timestep),reshape(data(:,10),n,timestep));
 %color by wake number
 % id=(data(:,1)==3 );
-patch(data(1:end-(n*2*numwings),2:5)',data(1:end-(n*2*numwings),6:9)',data(1:end-(n*2*numwings),10:13)',(data(1:end-(n*2*numwings),1))','FaceAlpha',0.5,'EdgeColor','k','EdgeAlpha',0.7)
+% p=patch(data(1:end-(n*5*numwings),2:5)',data(1:end-(n*5*numwings),6:9)',data(1:end-(n*5*numwings),10:13)',(data(1:end-(n*5*numwings),1))','FaceAlpha',0.6,'EdgeColor','k','EdgeAlpha',0.6)
+p=patch(data(:,2:5)',data(:,6:9)',data(:,10:13)',(data(:,1))','FaceAlpha',0.5,'EdgeColor','k','EdgeAlpha',0.7)
     if strcmp(sym,'y')==1
-       patch(data(:,2:5)',-data(:,6:9)',data(:,10:13)',(data(:,1))','FaceAlpha',0.5,'EdgeColor','k','EdgeAlpha',0.7)
+       patch(data(:,2:5)',-data(:,6:9)',data(:,10:13)',(data(:,1))','FaceAlpha',0.4,'EdgeColor','k','EdgeAlpha',0.6)
     end
-
+% p.CDataMapping = 'direct' %so colors stay how we set them
 %color by parameter (in progress)
 % patch(data(:,2:5)',data(:,6:9)',data(:,10:13)',data(:,6:9)','FaceAlpha',0.5,'EdgeColor','k')
 %     if strcmp(sym,'y')==1
@@ -188,7 +190,7 @@ axis tight
 
 %VIEW(AZ,EL)
 
-view([-23 16]);
+view([-63 14]);
 
 %set frame position and size
 
@@ -245,6 +247,6 @@ set(h,'renderer','painters');
 ax = gca;
 z = zoom;
 setAxes3DPanAndZoomStyle(z,ax,'camera')
-
+drawnow
 fclose all
 
