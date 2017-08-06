@@ -1,18 +1,18 @@
-Relaxed wake (yes 1, no 0, prescribe 2):		relax= 2
+Relaxed wake (yes 1, no 0, prescribe 2):		relax= 1
 steady (1) or unsteady (0): 		aerodynamics: = 1
 Symmetrical geometry (yes 1,no 0):	sym= 1
 Analysis type(thin 0, thick 1, panel quad 2, panel tri 3) analysistype = 3
 Boundary Condition (neumann 0, dirichlet 1) bc = 0
 
-Max. number of time steps:	Maxtime	= 25
-Width of each time step (sec):	deltime	= 5
+Max. number of time steps:	Maxtime	= 10
+Width of each time step (sec):	deltime	= 0.15
 Convergence delta-span effic.:	deltae 	= 0.00000 	(0 if only time stepping)
 
 Free Stream Velocity [ft/sec]:	Uinf	= 1.000000
-Angle of attack [deg]:		alpha	= 5
+Angle of attack [deg]:		alpha	= 0.0
 Sideslip Angle [deg]:		beta	= 0.000000
 
-Reference Area:			S = 6344.064
-Reference Span:			b = 170.2
+Reference Area:			S = 1
+Reference Span:			b = 1
 
-Wake angle (deg):		wakeangle = 80
+Wake angle (deg):		wakeangle = -99
