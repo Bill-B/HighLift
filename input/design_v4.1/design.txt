@@ -46,9 +46,9 @@ Tip Angle (rad):                    tepsilon = 0
 No. of spanwise elements n:         n = 6
 No. of chordwise elements m:        m = 24
 Root Camber:			    rcamb = flatplate
-Root Airfoil:			    rairfoil = naca0002
+Root Airfoil:			    rairfoil = thickplate
 Tip Camber:			    tcamb = flatplate
-Tip Airfoil:			    tairfoil = naca0002
+Tip Airfoil:			    tairfoil = thickplate
 ------------------------------------------------
 ----------- Panel 2 Design ---------------------
 Allign with Prev Panel?:            allign = 1  (yes 1,no 0)
@@ -62,9 +62,9 @@ Tip Angle (rad):                    tepsilon = 0
 No. of spanwise elements n:         n = 1
 No. of chordwise elements m:        m = 24
 Root Camber:			    rcamb = flatplate
-Root Airfoil:			    rairfoil = naca0002
+Root Airfoil:			    rairfoil = thickplate
 Tip Camber:			    tcamb = flatplate
-Tip Airfoil:			    tairfoil = naca0002
+Tip Airfoil:			    tairfoil = thickplate
 ------------------------------------------------
 ----------- Panel 3 Design ---------------------
 Allign with Prev Panel?:            allign = 1  (yes 1,no 0)
@@ -78,9 +78,9 @@ Tip Angle (rad):                    tepsilon = 0
 No. of spanwise elements n:         n = 6
 No. of chordwise elements m:        m = 24
 Root Camber:			    rcamb = flatplate
-Root Airfoil:			    rairfoil = naca0002
+Root Airfoil:			    rairfoil = thickplate
 Tip Camber:			    tcamb = flatplate
-Tip Airfoil:			    tairfoil = naca0002
+Tip Airfoil:			    tairfoil = thickplate
 ------------------------------------------------
 ----------- Panel 4 Design ---------------------
 Allign with Prev Panel?:            allign = 1  (yes 1,no 0)
@@ -94,9 +94,9 @@ Tip Angle (rad):                    tepsilon = 0
 No. of spanwise elements n:         n = 1
 No. of chordwise elements m:        m = 24
 Root Camber:			    rcamb = flatplate
-Root Airfoil:			    rairfoil = naca0002
+Root Airfoil:			    rairfoil = thickplate
 Tip Camber:			    tcamb = flatplate
-Tip Airfoil:			    tairfoil = naca0002
+Tip Airfoil:			    tairfoil = thickplate
 ------------------------------------------------
 ----------- Panel 5 Design ---------------------
 Allign with Prev Panel?:            allign = 1  (yes 1,no 0)
@@ -110,9 +110,9 @@ Tip Angle (rad):                    tepsilon = 0
 No. of spanwise elements n:         n = 6
 No. of chordwise elements m:        m = 24
 Root Camber:			    rcamb = flatplate
-Root Airfoil:			    rairfoil = naca0002
+Root Airfoil:			    rairfoil = thickplate
 Tip Camber:			    tcamb = flatplate
-Tip Airfoil:			    tairfoil = naca0002
+Tip Airfoil:			    tairfoil = thickplate
 ------------------------------------------------
 ------------------------------------------------
 
