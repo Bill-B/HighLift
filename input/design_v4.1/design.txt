@@ -17,102 +17,12 @@ Root Angle (rad):                   repsilon = 0.0349066
 Tip Leading Edge (X Y Z):           tLE = 0.0775	0.59515	0.031
 Tip Chord Length:                   tchord = 0.173
 Tip Angle (rad):                    tepsilon = 0.0349066
-No. of spanwise elements n:         n = 11
-No. of chordwise elements m:        m = 4
+No. of spanwise elements n:         n = 14
+No. of chordwise elements m:        m = 24
 Root Camber:			    rcamb = flatplate
 Root Airfoil:			    rairfoil = psu94097
 Tip Camber:			    tcamb = flatplate
 Tip Airfoil:			    tairfoil = psu94097
-------------------------------------------------
-------------------------------------------------
-
-
-------- Wing Name = tunnel ---------------
-No. of Panels:                      panels = 5
-Root Boundary Condition:	    BC1 = 010
-Tip Boundary Condition		    BC2 = 010
-Thickness (No 0, Yes 1):	    thick = 3
-Boundary Condition (Neumann 0, Dirichlet 1): bc = 0
-Chordwise Distribution of m:        cdist = linear (linear or sine)
------------ Panel 1 Design ---------------------
-Allign with Prev Panel?:            allign = 1  (yes 1,no 0)
-Root Blend Method:		    blend = 0 (0: none, 1: average, 2: dihedral based, 3: Panel Intersection, 4: Left Master, 5: Right Master)
-Root Leading Edge (X Y Z):          rLE = -1 0 -0.457
-Root Chord Length:                  rchord = 4
-Root Angle (rad):                   repsilon = 0
-Tip Leading Edge (X Y Z):           tLE = -1 0.825 -0.457
-Tip Chord Length:                   tchord = 4
-Tip Angle (rad):                    tepsilon = 0
-No. of spanwise elements n:         n = 3
-No. of chordwise elements m:        m = 4
-Root Camber:			    rcamb = flatplate
-Root Airfoil:			    rairfoil = thickplate
-Tip Camber:			    tcamb = flatplate
-Tip Airfoil:			    tairfoil = thickplate
-------------------------------------------------
------------ Panel 2 Design ---------------------
-Allign with Prev Panel?:            allign = 1  (yes 1,no 0)
-Root Blend Method:		    blend = 1 (0: none, 1: average, 2: dihedral based, 3: Panel Intersection, 4: Left Master, 5: Right Master)
-Root Leading Edge (X Y Z):          rLE = -1 0.825 -0.457
-Root Chord Length:                  rchord = 4
-Root Angle (rad):                   repsilon = 0
-Tip Leading Edge (X Y Z):           tLE = -1 0.914 -0.3681
-Tip Chord Length:                   tchord = 4
-Tip Angle (rad):                    tepsilon = 0
-No. of spanwise elements n:         n = 1
-No. of chordwise elements m:        m = 4
-Root Camber:			    rcamb = flatplate
-Root Airfoil:			    rairfoil = thickplate
-Tip Camber:			    tcamb = flatplate
-Tip Airfoil:			    tairfoil = thickplate
-------------------------------------------------
------------ Panel 3 Design ---------------------
-Allign with Prev Panel?:            allign = 1  (yes 1,no 0)
-Root Blend Method:		    blend = 1 (0: none, 1: average, 2: dihedral based, 3: Panel Intersection, 4: Left Master, 5: Right Master)
-Root Leading Edge (X Y Z):          rLE = -1 0.914 -0.3681
-Root Chord Length:                  rchord = 4
-Root Angle (rad):                   repsilon = 0
-Tip Leading Edge (X Y Z):           tLE = -1 0.914 0.3681
-Tip Chord Length:                   tchord = 4
-Tip Angle (rad):                    tepsilon = 0
-No. of spanwise elements n:         n = 3
-No. of chordwise elements m:        m = 4
-Root Camber:			    rcamb = flatplate
-Root Airfoil:			    rairfoil = thickplate
-Tip Camber:			    tcamb = flatplate
-Tip Airfoil:			    tairfoil = thickplate
-------------------------------------------------
------------ Panel 4 Design ---------------------
-Allign with Prev Panel?:            allign = 1  (yes 1,no 0)
-Root Blend Method:		    blend = 1 (0: none, 1: average, 2: dihedral based, 3: Panel Intersection, 4: Left Master, 5: Right Master)
-Root Leading Edge (X Y Z):          rLE = -1 0.914 0.3681
-Root Chord Length:                  rchord = 4
-Root Angle (rad):                   repsilon = 0
-Tip Leading Edge (X Y Z):           tLE = -1 0.825 0.457
-Tip Chord Length:                   tchord = 4
-Tip Angle (rad):                    tepsilon = 0
-No. of spanwise elements n:         n = 1
-No. of chordwise elements m:        m = 4
-Root Camber:			    rcamb = flatplate
-Root Airfoil:			    rairfoil = thickplate
-Tip Camber:			    tcamb = flatplate
-Tip Airfoil:			    tairfoil = thickplate
-------------------------------------------------
------------ Panel 5 Design ---------------------
-Allign with Prev Panel?:            allign = 1  (yes 1,no 0)
-Root Blend Method:		    blend = 1 (0: none, 1: average, 2: dihedral based, 3: Panel Intersection, 4: Left Master, 5: Right Master)
-Root Leading Edge (X Y Z):          rLE = -1 0.825 0.457
-Root Chord Length:                  rchord = 4
-Root Angle (rad):                   repsilon = 0
-Tip Leading Edge (X Y Z):           tLE = -1 0 0.457
-Tip Chord Length:                   tchord = 4
-Tip Angle (rad):                    tepsilon = 0
-No. of spanwise elements n:         n = 3
-No. of chordwise elements m:        m = 4
-Root Camber:			    rcamb = flatplate
-Root Airfoil:			    rairfoil = thickplate
-Tip Camber:			    tcamb = flatplate
-Tip Airfoil:			    tairfoil = thickplate
 ------------------------------------------------
 ------------------------------------------------
 
