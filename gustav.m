@@ -18,7 +18,7 @@ for wakeangle =[-99]
         inputtype = 2;
     end
     
-    rundir = strcat('C:\Users\raalf\Desktop\Billbillbill\HighLift\output\gustav',num2str(wakeangle));
+    rundir = strcat('C:\Users\raalf\Desktop\Billbillbill\HighLift\output\gustav-tunnel',num2str(wakeangle));
     mkdir(rundir)
     cd(rundir);
     
@@ -36,7 +36,7 @@ for wakeangle =[-99]
                 sizealfa=11;
                 
                 %create the directory
-                rundir = strcat('C:\Users\raalf\Desktop\Billbillbill\HighLift\output\gustav',num2str(wakeangle),'\',strcat(num2str(n),'x',num2str(m)),'\',strcat('alfa',num2str(alfa)));
+                rundir = strcat('C:\Users\raalf\Desktop\Billbillbill\HighLift\output\gustav-tunnel',num2str(wakeangle),'\',strcat(num2str(n),'x',num2str(m)),'\',strcat('alfa',num2str(alfa)));
                 mkdir(rundir);
                 cd(rundir);
                 mkdir('output');
@@ -129,7 +129,7 @@ for wakeangle =[-99]
                 fprintf(inpnew,'steady (1) or unsteady (0): 		aerodynamics: = 1\n');
                 fprintf(inpnew,'Symmetrical geometry (yes 1,no 0):	sym= 1\n');
                 fprintf(inpnew,'Analysis type(thin 0, thick 1, panel 2) analysistype = 3\n');
-                fprintf(inpnew,'Boundary Condition (neumann 0, dirichlet 1) bc = 0\n');
+                fprintf(inpnew,'Boundary Condition (neumann 0, dirichlet 1) bc = 0\n\n');
                 
                 fprintf(inpnew,'Max. number of time steps:	Maxtime	= 40\n');              %!!!!!!!!!!!!!!!!!!!!!!
                 fprintf(inpnew,'Width of each time step (sec):	deltime	= 0.10000\n');
