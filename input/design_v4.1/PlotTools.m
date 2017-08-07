@@ -293,7 +293,7 @@ if plotpanelon == 1
     setAxes3DPanAndZoomStyle(z,ax,'camera')
 end
 
-set(gcf,'renderer','painters');
+% set(gcf,'renderer','painters');
 
 fclose all
 %print some info to the window

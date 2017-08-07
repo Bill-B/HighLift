@@ -1,14 +1,17 @@
 -- Load Geometry --
-Wing to manipulate (name):      	active_wing = TRAP_Flap_12x14
+Wing to manipulate (name):      	active_wing = GustAV_main
 
 -- General Settings --
 Allign Root with Symmetry Plane? (y/n): allign = y
 
 -- Manipulate --
----- Translate ----
-Point to move towards (X Y Z):     		T1 = 0 0 -1 (Tip of vector)
-Starting Point (X Y Z):             	T2 = 0 0 0 (Tail of vector)
-Distance to move:                   	dist = 0.6454
+
+
+---- Rotate ---- 
+Axis of Rotation Point 1 (X Y Z):		P1 =  0.2285 0 0
+Axis of Rotation Point 2 (X Y Z):		P2 = 0.2285 1 0
+Angle of Rotation (rad):            	theta = 0.7854
+
 
 ---- End ----
 
@@ -22,7 +25,3 @@ Distance to move:                   	dist =
 ---- Mirror ----
 Plane to Mirror Across (XY, YZ or ZX):  mir_plane = 
 
----- Rotate ---- 
-Axis of Rotation Point 1 (X Y Z):		P1 =  
-Axis of Rotation Point 2 (X Y Z):		P2 = 
-Angle of Rotation (rad):            	theta = 

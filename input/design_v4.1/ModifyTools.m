@@ -48,114 +48,212 @@ loc = 0;
     end
         
     %open the file for the wing to load
-    fp = fopen(strcat('./wings/',wingload,'.dat'),'r');
+    wng = fopen(strcat('./wings/',wingload,'.dat'),'r');
     
+    wingcount = 1;
+ %read boundary conditions
+    while loc ~='='
+        loc = fscanf(wng, '%s', 1);
+    end
+    BC(wingcount,1) = fscanf(wng, '%d', 1);
     
-    %set a location variable for reading the values at the beginning of the txt
     loc = 0;
     
-        %read BC1 by finding '='
     while loc ~='='
-        loc = fscanf(fp, '%s', 1);
+        loc = fscanf(wng, '%s', 1);
     end
+    BC(wingcount,2) = fscanf(wng, '%d', 1);
     
-    %store data
-    BC(1) = fscanf(fp,'%d',1);
-    loc=0;
+    loc = 0;
     
-    %read BC2 by finding '='
+    %read analysis type
     while loc ~='='
-        loc = fscanf(fp, '%s', 1);
+        loc = fscanf(wng, '%s', 1);
     end
+    type = fscanf(wng, '%d', 1);
     
-    %store data
-    BC(2) = fscanf(fp,'%d',1);
-    loc=0;
+    loc = 0;
     
-    %number of panels on this wing
+    %read number of panels
     while loc ~='='
-        loc = fscanf(fp, '%s', 1);
+        loc = fscanf(wng, '%s', 1);
     end
-    %store data
-    numpanels = fscanf(fp,'%d');
-    loc=0;
+    numpanels(wingcount) = fscanf(wng, '%d', 1);
     
-    panelcount = 1;
-    for panelcount = 1:numpanels
-        %read paneldata by finding '='
+    loc = 0;
+    
+    %now for each panel
+    for panelcount = 1:numpanels(wingcount)
+        %allign
         while loc ~='='
-            loc = fscanf(fp, '%s', 1);
+            loc = fscanf(wng, '%s', 1);
         end
-        %store data
-        paneldata(panelcount).allign = fscanf(fp, '%d', 1);
+        paneldata(panelcount).allign = fscanf(wng, '%d', 1);
+        
+        loc = 0;
+        %blend
+        while loc ~='='
+            loc = fscanf(wng, '%s', 1);
+        end
+        paneldata(panelcount).blend = fscanf(wng, '%d', 1);
+        
+        loc = 0;
+        %m
+        while loc ~='='
+            loc = fscanf(wng, '%s', 1);
+        end
+        
+        paneldata(panelcount).m = fscanf(wng, '%d', 1);
+        loc = 0;
+        
+        %before moving on, check to make sure that all m values are the
+        %same for each wing
+        
+        %save the m from the first panel on the first wing
+        if wingcount == 1
+            firstm = paneldata(1).m;
+        end
+        
+        %then compare to all new m values
+        if paneldata(panelcount).m ~= firstm
+            error ('The m value for wing %d does not match the m on wing 1. All m values must be equal. Check the wings folder.', wingcount);
+        end
+        
+        
+        %n
+        while loc ~='='
+            loc = fscanf(wng, '%s', 1);
+        end
+        paneldata(panelcount).n = fscanf(wng, '%d', 1);
+        loc = 0;
+        
+        
+        %find total n and total number of elements
+        wingn(wingcount) = wingn(wingcount) + paneldata(panelcount).n;
+        if type == 2 || type == 3
+            numelements(wingcount) = numelements(wingcount) +(paneldata(panelcount).n * paneldata(panelcount).m*2);
+        else
+            numelements(wingcount) = numelements(wingcount) +(paneldata(panelcount).n * paneldata(panelcount).m);
+        end
+        %check to make sure the total n is the same for each wing
+%         if wingn(wingcount) ~= wingn(1)
+%             fclose all;
+%             clc
+%             clear
+%             error('The total n value for each wing must be the same.');
+%         end
+        
+        
+        %find the '#' sign at end of header to read panel coords
+        while loc ~='#'
+            loc = fgets(wng);
+        end
+        
+        %store the panel coordinates
+        wingname = wingload;
+        
+        panel(panelcount,1:12)=fscanf(wng,'%f %f %f %f %f %f %f %f %f %f %f %f',12);
+        panel(panelcount,13:15) = panel(panelcount,1:3);
         loc=0;
-        while loc ~='='
-            loc = fscanf(fp, '%s', 1);
-        end
-        %store data
-         paneldata(panelcount).blend = fscanf(fp, '%d', 1);
-        loc=0;
-        %read m by finding '=' after  'm '
-        while loc ~='='
-            loc = fscanf(fp, '%s', 1);
-        end
-    
-    %store data
-     paneldata(panelcount).m = fscanf(fp,'%d');
-    loc=0;
-    
-    %find wing m
-    wingm = paneldata(panelcount).m;
-    
-    %read n by finding '=' after  'n '
-    while loc ~='='
-        loc = fscanf(fp, '%s', 1);
+        
+        
+        %find wingspan
+%         panel_span =abs((panelcords.(wingname)(panelcount,5)-panelcords.(wingname)(panelcount,2)));
+%         wing_span(wingcount) = wing_span(wingcount) + panel_span;
+%         
+%         %find area
+%         panel_plan_area =  polyarea([panelcords.(wingname)(panelcount,1:3:10)],[panelcords.(wingname)(panelcount,2:3:11)]);
+%         totalarea = totalarea + panel_plan_area;
     end
-    
-    %store data
-    paneldata(panelcount).n = fscanf(fp,'%d');
-    loc=0;
-    
-        %find wing n
-    wingn = wingn + paneldata(panelcount).n;
-    
-    %calculate number of elements on this wing
-    numelements = numelements + paneldata(panelcount).m * paneldata(panelcount).n;
-      
-    %find the '#' sign at end of header to read panel coords
+    %done reading paneldata, now read elements
+    %find the '#' sign at end of header to read DVEs
     while loc ~='#'
-        loc = fgets(fp);
+        loc = fgets(wng);
     end
     
-    %store the panel coordinates
-    panel(panelcount,1:3)=fscanf(fp,'%f %f %f',3);
-    panel(panelcount,4:6)=fscanf(fp,'%f %f %f',3);
-    panel(panelcount,7:9)=fscanf(fp,'%f %f %f',3);
-    panel(panelcount,10:12)=fscanf(fp,'%f %f %f',3);
-    panel(panelcount,13:15) = panel(panelcount,1:3);
-    loc=0;
-    end   
-     
+    %clear the DVEread matrix
+    %         DVEread = zeros(numelements(wingcount),12);
     
-    %find the '#' sign at end of header to read elements
-    while loc ~='#'
-        loc = fgets(fp);
-    end
-    
+    %read the coords
     %use 'el' as element counter
-    el=1;
     
-    %scan through the file and create the DVE table for this wing 
-    while el<=numelements
-        fscanf(fp,'%d',1); %skipping index
-        DVE(el,1:12)=fscanf(fp,'%lf %lf %lf %lf %lf %lf %lf %lf %lf %lf %lf %lf', 12);
-        %add first coordinate to right end of DVE table so that it closes the element for
-        %plotting
+        %read the coords
+    for el = 1:numelements(wingcount)
+        %skip index
+        fscanf(wng,'%d',1);
+        %read coords
+        DVE(el,1:12) = fscanf(wng,'%lf %lf %lf %lf %lf %lf %lf %lf %lf %lf %lf %lf', 12);
         DVE(el,13:15)=DVE(el,1:3);
-        el=el+1;
     end
+    
+%     el=1;
+%     
+%     %scan through the file and create the DVE table for this wing 
+%     while el<=numelements
+%         fscanf(fp,'%d',1); %skipping index
+%         DVE(el,1:12)=fscanf(fp,'%lf %lf %lf %lf %lf %lf %lf %lf %lf %lf %lf %lf', 12);
+%         %add first coordinate to right end of DVE table so that it closes the element for
+%         %plotting
+%         DVE(el,13:15)=DVE(el,1:3);
+%         el=el+1;
+%     end
+%     
+    %add the DVEread (for this wing) to the total DVE matrix
+%     if wingcount == 1
+%         DVE = DVEread.(wingname);
+%     else
+%         DVE = [DVE;DVEread.(wingname)];
+%     end
+    
+    %done with the DVE coords, now find control points
+%     if feof(wng)==1
+%         break
+%     end
+    loc = 0;
+    while loc ~='#'
+        loc = fgets(wng);
+    end
+    for el = 1:numelements(wingcount)
+        %skip index
+        fscanf(wng,'%d',1);
+        %read coords
+        ctrlread.(wingname)(el,1:3) = fscanf(wng,'%lf %lf %lf ', 3);
+    end
+    loc = 0;
+    %add the DVEread (for this wing) to the total DVE matrix
+    if wingcount == 1
+        ctrl = ctrlread.(wingname);
+    else
+        ctrl = [ctrl;ctrlread.(wingname)];
+    end
+    loc = 0;
+    %done with the control points, now find normals
+%     if feof(wng)==1
+%         break
+%     end
+    loc = 0;
+    while loc ~='#'
+        loc = fgets(wng);
+    end
+    
+    for el = 1:numelements(wingcount)
+        %skip index
+        fscanf(wng,'%d',1);
+        %read normals
+        normalread.(wingname)(el,1:3) = fscanf(wng,'%lf %lf %lf ', 3);
+    end
+    
+    if wingcount == 1
+        norm = normalread.(wingname);
+    else
+        norm = [norm;normalread.(wingname)];
+    end
+    
+    fclose(wng);
+    
 
-fclose(fp);
+
+% fclose(fp);
 
 %done reading wing, now lets go back to the modify.txt
 %read manipulate section...
@@ -292,7 +390,7 @@ end
 %%=======================================================================%%
 
 %% CREATE WING#.txt FILES %%
-create_wings(wingload,paneldata,numpanels,numelements,BC,DVE,panel);
+create_wings( wingname,paneldata,numpanels, numelements,BC,DVE,panel,ctrl,norm,type );
 
 
 
